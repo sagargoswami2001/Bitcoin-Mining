@@ -1,7 +1,12 @@
 # Python Program to Bitcoin Mining Process.
 
 from hashlib import sha256  # SHA256 is a Cryptographic Hash Function
-MAX_NONCE = 1000000000000
+MAX_NONCE = 1000000000000           
+#The "nonce" in a bitcoin block is a 32-bit (4-byte)
+# field whose value is adjusted by miners 
+# so that the hash of the block will be less than or equal to the current target
+# of the network. The rest of the fields may not be changed, 
+# as they have a defined meaning.
 
 def SHA256(text):
     return sha256(text.encode("ascii")).hexdigest()
@@ -23,7 +28,11 @@ if __name__=='__main__':
     Mando->Cara->45
     '''
 
-    difficulty = 5 # Try Changing This to Higher Number and You Will See It Will Take More Time for Mining as Difficulty Increases.
+    difficulty = 5 # Try Changing This to Higher Number 
+                        #and You Will See It Will Take More Time for Mining as Difficulty Increases.
+                        #Beware to not Use a Large no. 
+                        #Reference: on NVIDIA GeForce GTX 1050Ti Oc GPU it takes >2 min 
+                        # Warning: do not use value Above 7
 
     import time
     start = time.time()
